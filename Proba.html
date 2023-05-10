@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <div>
+    <!-- Задание 1 -->
+    <button onclick="executeTask1()">1 задание - ввод числа</button>
+    <input type="text" id="task1Input" placeholder="Введите число">
+    <p id="task1Result"></p>
+
+    <br><br>
+
+    <!-- Задание 2 -->
+    <button onclick="executeTask2()">2 задание - калькулятор</button>
+    <input type="text" id="task2Input1" placeholder="Введите первое число">
+    <select id="task2Operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+    <input type="text" id="task2Input2" placeholder="Введите второе число">
+    <p id="task2Result"></p>
+
+    <br><br>
+
+    <!-- Задание 3 -->
+    <button onclick="executeTask3()">3 задание - введите число, умножив его на 2 и прибавив 7</button>
+    <input type="text" id="task3Input" placeholder="Введите число">
+    <p id="task3Result"></p>
+
+    <br><br>
+
+    <!-- Задание 4 -->
+    <button onclick="executeTask4()">4 задание - имя и возраст</button>
+    <input type="text" id="task4InputName" placeholder="Введите ваше имя">
+    <input type="text" id="task4InputYear" placeholder="Введите год рождения">
+    <p id="task4Result"></p>
+
+    <br><br>
+
+    <!-- Дополнительное задание -->
+    <button onclick="executeExtraTask()">Дополнительное задание</button>
+    <p id="extraTaskResult"></p>
+  </div>
+
+  <script>
+    function executeTask1() {
+      var a = document.getElementById("task1Input").value;
+      console.log("Вы ввели число: " + a);
+      document.getElementById("task1Result").textContent = "Вы ввели число: " + a;
+    }
+
+    function executeTask2() {
+      var number1 = parseFloat(document.getElementById("task2Input1").value);
+      var number2 = parseFloat(document.getElementById("task2Input2").value);
+      var operator = document.getElementById("task2Operator").value;
+
+      var result;
+      switch (operator) {
+        case '+':
+          result = number1 + number2;
+          break;
+        case '-':
+          result = number1 - number2;
+          break;
+        case '*':
+          result = number1 * number2;
+          break;
+        case '/':
+          result = number1 / number2;
+          break;
+        default:
+          result = 'Invalid operator';
+      }
+
+      document.getElementById("task2Result").textContent = "Результат: " + result;
+    }
+
+    function executeTask3() {
+      var b = document.getElementById("task3Input").value;
+      var secretNumber = (b - 7) / 2 
+      document.getElementById("task3Result").textContent = "Вы задумали число: " + secretNumber;
+    }
+
+    function executeTask4() {
+      var username = document.getElementById("task4InputName").value;
+      var birthYear = parseInt(document.getElementById("task4InputYear").value);
+      var currentYear = new Date().getFullYear();
+      var age = currentYear - birthYear;
+
+      document.getElementById("task4Result").textContent = username + ": " + age;
+    }
+
+    function executeExtraTask() {
+      var oops = "Hello!";
+      document.getElementById("extraTaskResult").textContent = "Тип переменной: " + typeof(oops);
+    }
+  </script>
+</body>
+</html>

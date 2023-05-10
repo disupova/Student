@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <script>
+    // Задание 1
+    var a = prompt("Введите любое число:");
+    console.log("Вы ввели число: " + a);
+    alert("Вы ввели число: " + a);
+
+    // Задание 2 - Калькулятор
+    var number1 = parseFloat(prompt("Введите первое число:"));
+    var number2 = parseFloat(prompt("Введите второе число:"));
+
+    var sum = number1 + number2;
+    var difference = number1 - number2;
+    var product = number1 * number2;
+    var quotient = number1 / number2;
+
+    alert("Сумма чисел: " + sum);
+    alert("Разность чисел: " + difference);
+    alert("Произведение чисел: " + product);
+    alert("Частное чисел: " + quotient);
+
+
+    // Задание 3
+    alert('Загадайте число, умножте его на 2 и прибавьте 7')
+    var b = prompt("Введите это число:");
+    var secretNumber = (b - 7) / 2;
+    alert("Вы задумали число: " + secretNumber);
+
+    // Задание 4
+    var username = prompt("Введите ваше имя:");
+    var birthYear = parseInt(prompt("Введите год вашего рождения:"));
+    var currentYear = new Date().getFullYear();
+    var age = currentYear - birthYear;
+
+    document.write(username + ": " + age);
+
+    // Дополнительное задание
+    var oops = "Hello!";
+    alert(typeof(oops));
+
+
+  </script>
+</body>
+</html>
